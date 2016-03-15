@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<script type="text/javascript">
+function whichButton(event){
+	var buttonNum=event.button;
+	if(buttonNum==0){
+		alert("点击的是鼠标左键");
+	}
+		if(buttonNum==1){
+		alert("点击的是鼠标中键");
+	}
+		if(buttonNum==2){
+		alert("点击的是鼠标右键");
+	}
+}
+document.onmousedown=whichButton;
+</script>
+<body>
+event.button的值来判断哪个鼠标按键被点击。0为左键，1为中键（滚轮）,2为右键。<br>
+并非与windows右键快捷菜单冲突，通过document.onmousedown的写法，而不可以直接写在body标签处<br>
+</body>
+</html>

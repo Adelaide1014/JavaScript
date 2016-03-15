@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>获取按键的ASCII值及按键</title>
+<meta charset="UTF-8">
+</head>
+<script type="text/javascript">
+var str="";
+	function getkeyCode(){
+		asc=event.keyCode;
+		str=String.fromCharCode(asc);     
+		txt.innerHTML=str;   
+		alert("ASCII值"+asc);
+		alert("按键"+str);
+
+	}
+	document.onkeydown=getkeyCode;
+</script>
+<body>
+获取按键的ASCII值,请输入：<div id="txt"></div>
+
+</body>
+</html>

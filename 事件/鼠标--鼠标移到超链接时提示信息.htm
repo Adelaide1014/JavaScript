@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+<title>鼠标移动到超链接上有提示信息</title>
+<meta charset="utf-8">
+<style type="text/css">
+	#txt{
+		background:#FFFFCC;
+		position:absolute;
+		width: auto;
+		height: auto;
+		visibility: hidden;
+
+	}
+</style>
+<script type="text/javascript">
+	function showInfo(){
+		txt.style.visibility="visible";
+		txt.style.top=event.y+10;
+		txt.style.left=event.x+10;
+	}
+</script>
+</head>
+<body>
+<div id="txt" style="" ><font color="red">这里是提示信息</font></div>
+<a href="#" onmouseover="showInfo()" onmouseout="txt.style.visibility='hidden'" >鼠标放在这里会有提示信息哦！！</a>
+</body>
+</html>

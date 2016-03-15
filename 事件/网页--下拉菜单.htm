@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>下拉菜单-点击其他位置菜单隐藏</title>
+<meta charset="UTF-8">
+</head>
+<style type="text/css">
+<!--
+	#tree{
+		visibility: hidden;
+		text-align: left;
+		width: 100;
+		height: auto;
+	}
+	a{text-decoration: none;}
+-->
+</style>
+<script type="text/javascript">
+<!--
+	function showTree(){		
+		tree.style.visibility="visible";	
+	}
+	function unshowTree(){		
+		tree.style.visibility="hidden";	
+	}
+	document.onmousedown=unshowTree;
+-->
+</script>
+<body>
+&nbsp;&nbsp;<a href="javascript:showTree()">下拉菜单</a>
+<div id="tree">
+  <a href="#">&nbsp给我留言</a><br>
+<a href="#">网上聊天</a><br>
+<a href="#">网上图片</a><br>
+<a href="#">关于我们</a><br>
+</div>
+
+</body>
+</html>

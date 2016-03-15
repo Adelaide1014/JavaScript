@@ -1,0 +1,41 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>跟随鼠标移动的星星</title>
+<script language="javascript">
+<!--
+	len=10;//星星个数
+	j = len-1;
+	mouseX = 0;
+	mouseY = 0;
+	function follow(){
+		mouseX = event.x;
+		mouseY = event.y;
+	}
+	function move(){
+		eval("t" + j).style.left = parseInt(eval("t" + (j-1)).style.left) + 50;
+		eval("t" + j).style.top  = parseInt(eval("t" + (j-1)).style.top);
+		j--;
+		if (j<1){
+			j =len-1;
+			t0.style.left = mouseX + 30;
+			t0.style.top  = mouseY ;
+		}
+		setTimeout("move()",5);
+	}
+	document.onmousemove = follow;
+//-->
+</script>
+</head>
+<body bgcolor="green">
+<script language="javascript">
+	for(i=0;i<len;i++){
+		str = "<img id=t" + i + " src='461.png' style='position:absolute;left=0;top=0;' height='30px';width='30px';/>";
+	
+		document.write (str);
+	}
+	move();
+</script>
+</body>
+</html>

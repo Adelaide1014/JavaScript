@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>请按←↑→↓键控制图片移动</title>
+<meta charset="UTF-8">
+</head>
+
+<script type="text/javascript">
+<!--
+	function move(){	
+		asc=event.keyCode;
+		alert("我进来额");
+		key=parseInt(asc);
+		if(pic){//表示这个元素加载完成
+		y=pic.style.top;
+		alert("y值是"+y);
+		
+		switch(key){
+		case 40:
+			pic.style.top =y+100;
+			alert("我进来额+100");
+			break;
+		}
+		} 	
+}
+	document.onkeydown=move;	
+	
+	-->
+</script>
+</head>
+<body>
+<div>请按←↑→↓键控制图片移动</div>
+<img src="461.png" id="pic" style="position:absolute;">
+调试键盘有在执行，但是ASC数值好像不对？变化的值太小
+//必须页面完整加载后点击事件发生才有效
+如何设置使得页面完整加载后才触发点击事件
+</body>
+</html>

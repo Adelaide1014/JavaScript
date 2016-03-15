@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+<title>弹出菜单-点击鼠标右键菜单显示</title>
+<meta charset="UTF-8">
+</head>
+<style type="text/css">
+<!--
+	#tree{
+		position: absolute;
+		visibility: hidden;
+		background: green;
+		width: 100;
+		height: auto;		
+		left: 200px;
+		top: 100px;
+	}
+	a{text-decoration: none;}
+-->
+</style>
+<script type="text/javascript">
+<!--
+	function showTree(){
+		var buttonNum=event.button;
+		if(buttonNum==2){
+		
+		tree.style.left=event.x+100+"px";//添加单位否则设置失效
+		tree.style.top=event.y+"px";
+		tree.style.visibility="visible";
+		}else{
+		tree.style.visibility="hidden";
+		}
+	}
+-->
+document.onmousedown=showTree;
+</script>
+<body>
+
+<div id="tree">
+  <a href="#">&nbsp;给我留言</a><br>
+<a href="#">网上聊天</a><br>
+<a href="#">网上图片</a><br>
+<a href="#">关于我们</a><br>
+</div>
+
+
+
+div标签在浏览器中的定位？为何必须要有px单位有效，而其他不需要，如果必须有单位，怎样加上单位使其有效<br>
+在最后添加+"px",即可对菜单定位<br>
+<h1>一级</h1>
+<h2>二级</h2>
+</body>
+</html>

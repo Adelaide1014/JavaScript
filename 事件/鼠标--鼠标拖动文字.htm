@@ -1,0 +1,21 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>可以用鼠标拖动的文字</title>
+</head>
+<script type="text/javascript">
+<!--
+down="false";
+function move(){
+	
+	if(down){
+	txt.style.left=event.x-50;
+	txt.style.top =event.y-10;
+    }
+}
+-->
+</script>
+<body onmousedown="whichButton(event)">
+<div id="txt" onmouseover="" style="position:absolute;cursor:hand;top:20" onmousedown="down=true" onmouseup="down=false" onmousemove="move()">可以用鼠标拖动的文字</div>
+</body>
+</html>

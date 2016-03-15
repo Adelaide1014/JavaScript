@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>使用鼠标拖动图片</title>
+<script language="javascript">
+<!--
+	down = false;
+	var x,y,imgID;
+	function dragImage(obj){
+		imgID = obj;
+		x = event.x - parseInt(imgID.style.left);
+		y = event.y;
+		down=true;
+	}
+	function cancelDrag(){	down=false;	}
+	function moveImage(){
+		if(down){
+			imgID.style.left  = event.x - x;
+			imgID.style.top   = event.y;
+			event.returnValue = false;
+		}
+	}
+	document.onmousemove = moveImage;
+	document.onmouseup = cancelDrag;
+//-->
+</script>
+</head>
+<body>
+<img src="461.png" style="position:absolute;left:0px;top=0px"
+onMouseDown="dragImage(this)">
+</div>
+</body>
+</html>

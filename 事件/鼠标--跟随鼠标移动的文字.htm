@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>跟随鼠标移动的文字</title>
+<script language="javascript">
+<!--
+	text = "跟随鼠标移动的文字";
+	j = text.length-1;
+	mouseX = 0;
+	mouseY = 0;
+	function follow(){
+		mouseX = event.x;
+		mouseY = event.y;
+	}
+	function move(){
+		eval("t" + j).style.left = parseInt(eval("t" + (j-1)).style.left) + 30;
+		eval("t" + j).style.top  = parseInt(eval("t" + (j-1)).style.top);
+		j--;
+		if (j<1){
+			j = text.length-1;
+			t0.style.left = mouseX + 20;
+			t0.style.top  = mouseY + 20;
+		}
+		setTimeout("move()",5);
+	}
+	document.onmousemove = follow;
+//-->
+</script>
+</head>
+<body>
+<script language="javascript">
+	for(i=0;i<text.length;i++){
+		str = "<div id=t" + i + " style='position:absolute;left=0;top=0;'>";
+		str = str + text.charAt(i) + "</div>"
+		document.write (str);
+	}
+	move();
+</script>
+</body>
+</html>
